@@ -46,9 +46,11 @@ public class AddCommonTagsDialog {
 		JPanel itemTags = new JPanel(new GridLayout(0, 1, 2, 2));
 		JPanel entityTags = new JPanel(new GridLayout(0, 1, 2, 2));
 		JPanel biomeTags = new JPanel(new GridLayout(0, 1, 2, 2));
+		JPanel structureTags = new JPanel(new GridLayout(0, 1, 2, 2));
 		JPanel functionTags = new JPanel(new GridLayout(0, 1, 2, 2));
 		JPanel damageTypeTags = new JPanel(new GridLayout(0, 1, 2, 2));
 		JPanel enchantmentTags = new JPanel(new GridLayout(0, 1, 2, 2));
+		JPanel gameEventTags = new JPanel(new GridLayout(0, 1, 2, 2));
 
 		JTabbedPane tabPanel = new JTabbedPane();
 
@@ -56,9 +58,11 @@ public class AddCommonTagsDialog {
 		tabPanel.add(L10N.t("tag.type.items"), makePage(itemTags));
 		tabPanel.add(L10N.t("tag.type.entities"), makePage(entityTags));
 		tabPanel.add(L10N.t("tag.type.biomes"), makePage(biomeTags));
+		tabPanel.add(L10N.t("tag.type.structures"), makePage(structureTags));
 		tabPanel.add(L10N.t("tag.type.functions"), makePage(functionTags));
 		tabPanel.add(L10N.t("tag.type.damage_types"), makePage(damageTypeTags));
 		tabPanel.add(L10N.t("tag.type.enchantments"), makePage(enchantmentTags));
+		tabPanel.add(L10N.t("tag.type.game_events"), makePage(gameEventTags));
 
 		dialog.add("Center", tabPanel);
 
@@ -116,6 +120,16 @@ public class AddCommonTagsDialog {
 		callables.add(addTag(mcreator, biomeTags, "is_savanna", "minecraft", TagType.BIOMES, false));
 		callables.add(addTag(mcreator, biomeTags, "without_wandering_trader_spawns", "minecraft", TagType.BIOMES, false));
 
+		callables.add(addTag(mcreator, structureTags, "cats_spawn_in", "minecraft", TagType.STRUCTURES, false));
+		callables.add(addTag(mcreator, structureTags, "dolphin_located", "minecraft", TagType.STRUCTURES, false));
+		callables.add(addTag(mcreator, structureTags, "eye_of_ender_located", "minecraft", TagType.STRUCTURES, false));
+		callables.add(addTag(mcreator, structureTags, "mineshaft", "minecraft", TagType.STRUCTURES, false));
+		callables.add(addTag(mcreator, structureTags, "ocean_ruin", "minecraft", TagType.STRUCTURES, false));
+		callables.add(addTag(mcreator, structureTags, "on_treasure_maps", "minecraft", TagType.STRUCTURES, false));
+		callables.add(addTag(mcreator, structureTags, "ruined_portal", "minecraft", TagType.STRUCTURES, false));
+		callables.add(addTag(mcreator, structureTags, "shipwreck", "minecraft", TagType.STRUCTURES, false));
+		callables.add(addTag(mcreator, structureTags, "village", "minecraft", TagType.STRUCTURES, false));
+
 		callables.add(addTag(mcreator, functionTags, "tick", "minecraft", TagType.FUNCTIONS, false));
 		callables.add(addTag(mcreator, functionTags, "load", "minecraft", TagType.FUNCTIONS, false));
 
@@ -135,6 +149,10 @@ public class AddCommonTagsDialog {
 		callables.add(addTag(mcreator, enchantmentTags, "treasure", "minecraft", TagType.ENCHANTMENTS, false));
 		callables.add(addTag(mcreator, enchantmentTags, "tradeable", "minecraft", TagType.ENCHANTMENTS, false));
 		callables.add(addTag(mcreator, enchantmentTags, "smelts_loot", "minecraft", TagType.ENCHANTMENTS, false));
+
+		callables.add(addTag(mcreator, gameEventTags, "warden_can_listen", "minecraft", TagType.GAME_EVENTS, false));
+		callables.add(addTag(mcreator, gameEventTags, "shrieker_can_listen", "minecraft", TagType.GAME_EVENTS, false));
+		callables.add(addTag(mcreator, gameEventTags, "allay_can_listen", "minecraft", TagType.GAME_EVENTS, false));
 		//@formatter:on
 
 		ok.addActionListener(e -> {

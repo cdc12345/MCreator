@@ -24,6 +24,7 @@ import net.mcreator.io.tree.FileNode;
 import net.mcreator.io.tree.FileTree;
 import net.mcreator.io.zip.ZipIO;
 import net.mcreator.minecraft.RegistryNameFixer;
+import net.mcreator.minecraft.resourcepack.ResourcePackInfo;
 import net.mcreator.minecraft.resourcepack.ResourcePackStructure;
 import net.mcreator.ui.FileOpener;
 import net.mcreator.ui.MCreator;
@@ -43,7 +44,6 @@ import net.mcreator.ui.dialogs.imageeditor.NewImageDialog;
 import net.mcreator.ui.init.L10N;
 import net.mcreator.ui.init.UIRES;
 import net.mcreator.ui.laf.themes.Theme;
-import net.mcreator.minecraft.resourcepack.ResourcePackInfo;
 import net.mcreator.ui.views.editor.image.ImageMakerView;
 import net.mcreator.ui.workspace.AbstractWorkspacePanel;
 import net.mcreator.ui.workspace.IReloadableFilterable;
@@ -117,7 +117,6 @@ public class ResourcePackEditor extends JPanel implements IReloadableFilterable 
 		jsp.setCorner(JScrollPane.LOWER_LEFT_CORNER, new JPanel());
 
 		TransparentToolBar folderBar = new TransparentToolBar();
-		add("North", folderBar);
 
 		JPopupMenu createMenu = new JPopupMenu();
 		JMenuItem createJSON = new JMenuItem(L10N.t("action.browser.new_json_file"));
@@ -176,7 +175,6 @@ public class ResourcePackEditor extends JPanel implements IReloadableFilterable 
 		this.breadCrumb = new JFileBreadCrumb(mcreator, root, root);
 
 		TransparentToolBar fileBar = new TransparentToolBar();
-		add("North", fileBar);
 
 		editFile = AbstractWorkspacePanel.createToolBarButton("mcreator.resourcepack.edit_override",
 				UIRES.get("16px.edit"), e -> editOrOverrideCurrentEntry());

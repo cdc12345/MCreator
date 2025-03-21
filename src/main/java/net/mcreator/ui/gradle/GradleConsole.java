@@ -69,8 +69,8 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.*;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -414,7 +414,8 @@ public class GradleConsole extends JPanel {
 		if (isGradleSync) {
 			String extraSyncTask = ref.getGeneratorConfiguration().getGradleTaskFor("sync_task");
 			if (extraSyncTask != null) {
-				task = GradleUtils.getGradleSyncLauncher(ref.getGeneratorConfiguration(), projectConnection, extraSyncTask);
+				task = GradleUtils.getGradleSyncLauncher(ref.getGeneratorConfiguration(), projectConnection,
+						extraSyncTask);
 			} else {
 				task = GradleUtils.getGradleSyncLauncher(ref.getGeneratorConfiguration(), projectConnection);
 			}
@@ -614,7 +615,9 @@ public class GradleConsole extends JPanel {
 							if (!rerunFlag) {
 								rerunFlag = true;
 
-								LOG.warn("Gradle task failed due to JMX port issues. Disabling JMX and attempting re-running task: {}", command);
+								LOG.warn(
+										"Gradle task failed due to JMX port issues. Disabling JMX and attempting re-running task: {}",
+										command);
 
 								PreferencesManager.PREFERENCES.gradle.enablePerformanceMonitor.set(false);
 
